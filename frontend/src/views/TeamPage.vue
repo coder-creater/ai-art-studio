@@ -1,9 +1,0 @@
-<template>
-  <div class="container">
-    <h1>Our Team</h1>
-  </div>
-</template>
-
-<style>
-
-</style>
