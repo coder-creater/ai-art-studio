@@ -6,6 +6,7 @@ charset-normalizer==2.1.1
 colorama==0.4.5
 decorator==5.1.1
 diffusers==0.6.0
+python-dotenv==0.21.0
 Django==4.1.2
 django-binary-database-files==1.0.17
 django-cors-headers==3.13.0
@@ -31,9 +32,6 @@ pip==22.3
 postgres==4.0
 prompt-toolkit==3.0.32
 protobuf==3.19.5
-psycopg2==2.9.5
-psycopg2-binary==2.9.5
-psycopg2-pool==1.1
 pure-eval==0.2.2
 Pygments==2.13.0
 pyparsing==3.0.9
@@ -46,8 +44,6 @@ six==1.16.0
 sqlparse==0.4.3
 stability-sdk==0.2.7
 stack-data==0.6.0
-tokenizers==0.13.1
-torch==1.12.1
 tqdm==4.64.1
 traitlets==5.5.0
 transformers==4.23.1
