@@ -2,6 +2,7 @@ from django.shortcuts import render
 from json import JSONDecoder
 from django.views import View
 from django.http import JsonResponse
+from dotenv import load_dotenv
 import torch
 import warnings
 import requests
@@ -17,6 +18,12 @@ import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 from diffusers import StableDiffusionImg2ImgPipeline, StableDiffusionPipeline
 from django.views.decorators.csrf import csrf_exempt
 import re
+
+from backend.settings import BASE_DIR
+
+load_dotenv(os.path.join(BASE_DIR, '.env'))
+
+print(os.getenv("API_KEY"))
 
 def test(request):
   return JsonResponse({"message": "Hello World"})
@@ -72,7 +79,7 @@ def sdk_gen(request):
   im = Image.open(BytesIO(base64.b64decode(image_data)))
   im = im.resize((768, 512))
   stability_api = client.StabilityInference(
-    key= "sk-uAlFSCOfsvrw32UpEyAXr1TCWy3pwcW2fWw2k2sx8dkGpbzL", 
+    key= "sk-a6704AqvdMbtTfgtVDHHQ0NrrEpBvwnnBDOjQ9nTSNIQrg3m", 
     verbose=True,
   )
 
@@ -93,4 +100,4 @@ def sdk_gen(request):
           if artifact.type == generation.ARTIFACT_IMAGE:
               store = artifact.binary
               img = str(base64.b64encode(store))
-              return JsonResponse({'img': img})
+              return JsonResponse({'img': img[2:-1]})
