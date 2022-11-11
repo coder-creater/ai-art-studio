@@ -20,7 +20,7 @@ def sdk_gen(request):
   im = Image.open(BytesIO(base64.b64decode(image_data)))
   im = im.resize((768, 512))
   stability_api = client.StabilityInference(
-    key= "sk-a6704AqvdMbtTfgtVDHHQ0NrrEpBvwnnBDOjQ9nTSNIQrg3m", 
+    key= "sk-LSGz4ZgKzzNrgvTe4K4yz5XbPHCJdCnulW9xZNVGS0n2k8q7", 
     verbose=True,
   )
 
